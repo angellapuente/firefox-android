@@ -37,6 +37,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
 
+
     <application
         android:name=".FenixApplication"
         android:allowBackup="false"
@@ -48,6 +49,10 @@
         android:theme="@style/NormalTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
+
+        <meta-data
+            android:name="distractionOptimized"
+            android:value="true" />
 
         <!--
           We inherited this entry (${applicationId}.App) from Fennec. We need to keep this as our
@@ -67,6 +72,10 @@
             </intent-filter>
 
             <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+
+            <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity-alias>
@@ -78,6 +87,10 @@
             android:name="org.mozilla.gecko.BrowserApp"
             android:targetActivity=".IntentReceiverActivity"
             android:exported="true">
+
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
         </activity-alias>
 
         <!-- Activity alias from Fennec used by PWA launchers on the home screen -->
@@ -88,6 +101,10 @@
             <intent-filter>
                 <action android:name="org.mozilla.gecko.WEBAPP" />
             </intent-filter>
+
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
         </activity-alias>
 
         <activity
@@ -98,6 +115,10 @@
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true"
             android:windowSoftInputMode="adjustResize">
+
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -142,7 +163,11 @@
         </activity>
 
         <activity android:name=".home.mozonline.PrivacyContentDisplayActivity"
-                android:exported="false"/>
+                android:exported="false">
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity
             android:name=".customtabs.ExternalAppBrowserActivity"
@@ -154,7 +179,11 @@
             android:taskAffinity=""
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity
             android:name=".IntentReceiverActivity"
@@ -163,7 +192,9 @@
             android:taskAffinity=""
             android:exported="true"
             android:excludeFromRecents="true" >
-
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
             <!--
               Respond to `Intent.makeMainSelectorActivity(Intent.ACTION_MAIN, Intent.CATEGORY_APP_BROWSER)`
             -->
@@ -249,13 +280,21 @@
 
         <activity
             android:name=".crashes.CrashListActivity"
-            android:exported="false" />
+            android:exported="false" >
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity android:name=".widget.VoiceSearchActivity"
             android:theme="@style/Theme.AppCompat.Translucent"
             android:taskAffinity=""
             android:excludeFromRecents="true"
-            />
+            >
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity
             android:name=".settings.account.AuthCustomTabActivity"
@@ -263,26 +302,50 @@
             android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize|layoutDirection|smallestScreenSize|screenLayout"
             android:exported="false"
             android:taskAffinity=""
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" >
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity android:name=".settings.account.AuthIntentReceiverActivity"
-            android:exported="false" />
+            android:exported="false" >
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity android:name=".autofill.AutofillUnlockActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Translucent" />
+            android:theme="@style/Theme.AppCompat.Translucent" >
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity android:name=".autofill.AutofillConfirmActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Translucent" />
+            android:theme="@style/Theme.AppCompat.Translucent" >
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity android:name=".autofill.AutofillSearchActivity"
             android:exported="false"
-            android:theme="@style/DialogActivityTheme" />
+            android:theme="@style/DialogActivityTheme">
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <activity
             android:name=".gleanplumb.NotificationClickedReceiverActivity"
-            android:exported="false" />
+            android:exported="false" >
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
 
         <service
             android:name=".autofill.AutofillService"
